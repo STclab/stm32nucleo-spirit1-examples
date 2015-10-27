@@ -71,14 +71,14 @@
  */
 extern resource_t
   res_hello,
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
   res_temperature,
   res_humidity,
   res_magneto,
   res_acceleration,
   res_gyroscope,
   res_pressure,
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
   res_push,
   res_event,
   res_separate;
@@ -86,14 +86,14 @@ extern resource_t
 extern resource_t res_leds, res_toggle;
 #endif /*PLATFORM_HAS_LEDS*/
 
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
 #include "dev/temperature-sensor.h"
 #include "dev/humidity-sensor.h"
 #include "dev/magneto-sensor.h"
 #include "dev/acceleration-sensor.h"
 #include "dev/gyroscope-sensor.h"
 #include "dev/pressure-sensor.h"
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
 
 #if PLATFORM_HAS_RADIO
 #include "dev/radio-sensor.h"
@@ -133,7 +133,7 @@ PROCESS_THREAD(er_example_server, ev, data)
 #endif /*PLATFORM_HAS_BUTTON*/
 
 
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
   SENSORS_ACTIVATE(temperature_sensor);
   rest_activate_resource(&res_temperature, "sensors/temperature");
 
@@ -151,7 +151,7 @@ PROCESS_THREAD(er_example_server, ev, data)
 
   SENSORS_ACTIVATE(pressure_sensor);
   rest_activate_resource(&res_pressure, "sensors/pressure");
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
 
   /*
    * Bind the resources to their Uri-Path.

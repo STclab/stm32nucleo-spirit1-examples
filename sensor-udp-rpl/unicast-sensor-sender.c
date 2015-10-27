@@ -56,7 +56,7 @@
 #include "dev/leds.h"
 #include "dev/radio-sensor.h"
 
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
 #include "dev/sensor-common.h"
 #include "dev/temperature-sensor.h"
 #include "dev/humidity-sensor.h"
@@ -64,7 +64,7 @@
 #include "dev/magneto-sensor.h"
 #include "dev/acceleration-sensor.h"
 #include "dev/gyroscope-sensor.h"
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
 
 #define UDP_PORT 1234
 #define SERVICE_ID 199
@@ -125,14 +125,14 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   SENSORS_ACTIVATE(button_sensor);
   SENSORS_ACTIVATE(radio_sensor);
   
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
   SENSORS_ACTIVATE(temperature_sensor);
   SENSORS_ACTIVATE(humidity_sensor);
   SENSORS_ACTIVATE(pressure_sensor);
   SENSORS_ACTIVATE(magneto_sensor);
   SENSORS_ACTIVATE(acceleration_sensor);
   SENSORS_ACTIVATE(gyroscope_sensor);
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
 
   servreg_hack_init();
 
@@ -158,8 +158,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       uip_debug_ipaddr_print(addr);
       printf("\n");
 	  
-#ifdef COMPILE_SENSORS
-      switch(message_number) {
+#ifdef X_NUCLEO_IKS01A1
+    switch(message_number) {
 	case 0:
           sensor_value = temperature_sensor.value(0);
 	  sprintf(buf, "Temperature:\t%d.%d C", sensor_value/10, ABS_VALUE(sensor_value)%10);
@@ -201,7 +201,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
      if(message_number > 7) {
        message_number = 0;
      }
-#endif /*COMPILE_SENSORS*/
+#endif /*X_NUCLEO_IKS01A1*/
     } else {
       printf("Service %d not found\n", SERVICE_ID);
     }

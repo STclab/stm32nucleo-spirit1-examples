@@ -38,7 +38,7 @@
 
 #include "contiki.h"
 
-#ifdef COMPILE_SENSORS
+#ifdef X_NUCLEO_IKS01A1
 
 #include <string.h>
 #include "rest-engine.h"
@@ -85,4 +85,4 @@ res_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferr
     REST.set_response_payload(response, msg, strlen(msg));
   }
 }
-#endif /*  COMPILE_SENSORS */
+#endif /*X_NUCLEO_IKS01A1*/

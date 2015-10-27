@@ -5,8 +5,8 @@ CONTIKI=../../..
 
 CFLAGS += -DPROJECT_CONF_H=\"project-conf.h\"
 
-# By default enable ST NUCLEO SENSOR BOARD
-USE_SENSOR_BOARD=1
+# By default enable X-NUCLEO-IKS01A1 SENSORS BOARD
+SENSORBOARD=iks01a1
 
 # automatically build RESTful resources
 REST_RESOURCES_DIR = ./resources
