@@ -7,3 +7,5 @@ Simply copy the .bin on the USB mass storage that is automatically created when 
 * XXX-MHz/sensor-er-rest-example/sensor-er-example-server-XXX.bin: implements a CoAP server that exposes the sensors of the STM32 Nucleo expansion board (sensors expansion board required).
 * XXX-MHz/sensor-udp-rpl/unicast-sensor-sender-XXX.bin: implements the sending of UDP messages carrying  sensor data, acting as UDP client (sensors expansion board required).
 * XXX-MHz/sensor-udp-rpl/unicast-sensor-receiver-XXX.bin:  implements the receiving of UDP messages, acting as UDP server (no need of sensors expansion board).
+* XXX-MHz/sniffer/sniffer-XXX.bin: packet sniffer to be used with wireshark.
+
