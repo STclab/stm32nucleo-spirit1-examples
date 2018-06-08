@@ -8,7 +8,7 @@ Instructions (linux or cygwin under windows):
 
 sudo serialdump-linux  -b115200 /dev/ttyACMx | ./convert-to-binary | wireshark -k -i -
 
-serialdump-windows.exe -b115200 /dev/ttySz   | ./convert-to-binary | wireshark -k -i -
+serialdump-windows.exe -b115200 /dev/ttySz   | ./convert-to-binary | wireshark.exe -k -i -
 
 (mind the trailing '-') where ttyACMx or ttySz is the device used by your board.
 
