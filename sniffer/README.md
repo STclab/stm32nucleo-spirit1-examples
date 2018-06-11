@@ -20,7 +20,7 @@ Prerequisites:
 
 Troubleshooting:
 - under windows you may need to recompile serialdump.c in order to rebuild serialdump-windows.exe
-- under windows you may need to hadrcode the baudrate (115200) in the serialdump.c code
+- under windows you may need to hardcode the baudrate (115200) in the serialdump.c code
 - under windows you may need to use the full path for wireshark.exe if it is in a path with spaces, use '\' as escape char before spaces and parenthesis.
 
 
